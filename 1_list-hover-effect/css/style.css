@@ -1,10 +1,77 @@
 @import './google-fonts.css';
 
+/* 定义根作用域下的变量 */
+:root {
+    --theme-color: #333;
+    --theme-background: #eee;
+    --theme-button: #3178c6;
+    --theme-border:#eee;
+  }
+  /* 更改dark类名下变量的取值 */
+  .dark{
+    --theme-color: #eee;
+    --theme-background: #333;
+    --theme-button: #08488d;
+    --theme-border:#eee;
+  }
+  /* 更改light类名下变量的取值 */
+  .light{
+    --theme-color: #333;
+    --theme-background: #fff;
+    --theme-button: #6e9dcf;
+    --theme-border:#333;
+  }
+  
+  
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+.toggle {
+    margin: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 40px;
+    color: var(--theme-color);
+    border: 1px solid var(--theme-border);
+    background-color: var(--theme-button);
+    border-radius: 10px;
+}
+
+/* button .active {
+    body {
+        color:#d1d1d1;
+        background-color: #181818;
+    }
+
+    .container h2 {
+        color:#d1d1d1;
+    }
+
+    ul li {
+        background-color: #181818;
+    }
+
+    ul li:hover {
+        box-shadow: -10px 20px 35px rgba(82, 238, 243, 0.996);
+    }
+
+    ul li .content .rank {
+        color: #101c7b;
+    }
+
+    ul li .content h4 {
+        color:#d1d1d1;
+    }
+
+    ul li .content p {
+        color:#d1d1d1;
+    }
+} */
 
 ul li {list-style: none;}
 
@@ -16,10 +83,10 @@ img {
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: #333;
+    color: var(--theme-color);
 
     min-height: 100vh;
-    background-color: #111111;
+    background-color: var(--theme-background);
 
     display: flex;
     justify-content: center;
@@ -31,7 +98,7 @@ body {
 }
 
 .container h2 {
-    color: #ea8011;
+    color: var(--theme-color);
     font-size: 1.75em;
     margin-bottom: 20px;
     text-align: center;
@@ -54,7 +121,7 @@ ul li {
     padding: 10px;
     margin-block: 10px;
    
-    background-color: #191919;
+    background-color: var(--theme-background);
     border-radius: 10px;
     cursor: pointer;
     transition: 0.5s;
@@ -62,7 +129,7 @@ ul li {
 
 
 ul li:hover {
-    box-shadow: -10px 20px 35px rgba(230, 68, 68, 0.15);
+    box-shadow: -10px 20px 35px rgba(0, 0, 0, 0.15);
     transform: scale(1.5);
     filter: blur(0);
     opacity: 1;
@@ -94,8 +161,10 @@ ul li .content .rank {
     transition: opacity 0.05s;
 }
 
+
 ul li:hover .content .rank {
     opacity: 1;
+    right: 20px;
 }
 
 ul li .content .rank small {
@@ -105,13 +174,13 @@ ul li .content .rank small {
 
 
 ul li .content h4 {
-    color: #bfbfbf;
+    color: var(--theme-color);
     font-weight: 600;
     line-height: 1.2em;
 }
 
 ul li .content p {
-    color: #bfbfbf;
+    color: var(--theme-color);
     font-size: 0.75em;
 }
 
